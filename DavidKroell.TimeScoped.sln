@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DavidKroell.TimeScoped", "src\DavidKroell.TimeScoped\DavidKroell.TimeScoped.csproj", "{283814F3-5230-4E97-861A-B8879AFDD221}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DavidKroell.TimeScoped.Tests", "test\DavidKroell.TimeScoped.Tests\DavidKroell.TimeScoped.Tests.csproj", "{8B7A730B-47FF-4A90-BA10-65FEFE4CBEA4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{283814F3-5230-4E97-861A-B8879AFDD221}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{283814F3-5230-4E97-861A-B8879AFDD221}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{283814F3-5230-4E97-861A-B8879AFDD221}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{283814F3-5230-4E97-861A-B8879AFDD221}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B7A730B-47FF-4A90-BA10-65FEFE4CBEA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B7A730B-47FF-4A90-BA10-65FEFE4CBEA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B7A730B-47FF-4A90-BA10-65FEFE4CBEA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B7A730B-47FF-4A90-BA10-65FEFE4CBEA4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
