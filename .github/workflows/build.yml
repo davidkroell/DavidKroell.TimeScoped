@@ -3,6 +3,8 @@
 on:
   push:
     branches: [ main ]
+    tags:
+      - '*'
   pull_request:
     branches: [ main ]
 
@@ -34,18 +36,17 @@ jobs:
       - name: Restore dependencies
         run: dotnet restore
         
-      - name: Build without version
-        if: ${{ !startsWith(github.ref, 'refs/tags/v') }}
+      - name: Build
         run: dotnet build $SOLUTION --configuration $BUILD_CONFIG --no-restore
-
-      - name: Build with version
-        if: startsWith(github.ref, 'refs/tags/v')
-        run: dotnet build $SOLUTION --configuration $BUILD_CONFIG -p:Version=${GITHUB_REF_NAME:1} --no-restore
 
       - name: Test
         run: dotnet test --no-build --verbosity normal --configuration $BUILD_CONFIG
-        
-      - name: Publish tag
+
+      - name: Pack NuGet
+        if: startsWith(github.ref, 'refs/tags/v')
+        run: dotnet pack $SOLUTION --configuration $BUILD_CONFIG -p:Version=${GITHUB_REF_NAME:1} --no-build
+
+      - name: Publish NuGet
         if: startsWith(github.ref, 'refs/tags/v')
         run: dotnet nuget push **/*.nupkg --source 'https://api.nuget.org/v3/index.json' --skip-duplicate --api-key ${{secrets.NUGET_API_KEY}}
 
